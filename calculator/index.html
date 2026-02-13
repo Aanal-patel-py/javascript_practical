@@ -12,14 +12,14 @@
 <body>
     <div class="container-fluid py-1.5" style="max-width: 400px; max-height: 800px; background:rgb(247, 246, 246);">
     <div class="row p-3" style="height:120px;">
-        <input class="form-control text-end" id="display" placeholder="0">
+        <input type="text" class="form-control text-end" id="display" pattern="[0-9+\-*/]+" oninput="validateCalcInput(this)" placeholder="0" value="0">
     </div>
     <div class="row p-3 justify-content-start">
         <div class="col-2 p-0">
-            <button type="button" class="btn w-100" data-operator="degree">DEG</button>
+            <button value="DEG" type="button" class="btn w-100" data-operator="degree">DEG</button>
         </div>
         <div class="col-2 p-0">
-            <button type="button" class="btn w-100" data-operator="fe">F-E</button>
+            <button value="FE" type="button" class="btn w-100" data-operator="fe">F-E</button>
         </div>
     </div>
     <div class="row align-items-center gx-3">
@@ -47,9 +47,9 @@
                     Trignometry
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <li><a class="dropdown-item" href="#">sin()</a></li>
+                    <li><a class="dropdown-item" href="#">cos()</a></li>
+                    <li><a class="dropdown-item" href="#">tan()</a></li>
                 </ul>
             </div>
         </div>
@@ -77,10 +77,10 @@
             <button type="button" class="btn w-100" data-operator="exponent of 10">e</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-operator="Clear">C</button>
+            <button value="clear" type="button" class="btn w-100" data-action="Clear">C</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-operator="back_space"><img style="width: 20px;" src="public/delete.png"></button>
+            <button value="backspace" type="button" class="btn w-100" data-action="back_space"><img style="width: 20px;" src="public/delete.png"></button>
         </div>
     </div>
     <div class="row my-1 gx-3">
@@ -114,7 +114,7 @@
             <button type="button" class="btn w-100" data-operator="factorial">n!</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-operator="divide">&divide;</button>
+            <button value="/" type="button" class="btn w-100" data-operator="divide">&divide;</button>
         </div>
     </div>
     <div class="row my-1 gx-3">
@@ -122,16 +122,16 @@
             <button type="button" class="btn w-100" data-operator="x-exponent-y">x<sup>y</sup></button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-number="7">7</button>
+            <button value="7" type="button" class="btn w-100" data-number="7">7</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-number="8">8</button>
+            <button value="8" type="button" class="btn w-100" data-number="8">8</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-number="9">9</button>
+            <button value="9" type="button" class="btn w-100" data-number="9">9</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-operator="multiply">x</button>
+            <button value="*" type="button" class="btn w-100" data-operator="multiply">x</button>
         </div>
     </div>
     <div class="row my-1 gx-3">
@@ -139,16 +139,16 @@
             <button type="button" class="btn w-100" data-operator="10-exponent-x">10<sup>x</sup></button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-number="4">4</button>
+            <button value="4" type="button" class="btn w-100" data-number="4">4</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-number="5">5</button>
+            <button value="5" type="button" class="btn w-100" data-number="5">5</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-number="6">6</button>
+            <button value="6" type="button" class="btn w-100" data-number="6">6</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-operator="subtract">-</button>
+            <button value="-" type="button" class="btn w-100" data-operator="subtract">-</button>
         </div>
     </div>
     <div class="row my-1 gx-3">
@@ -156,16 +156,16 @@
             <button type="button" class="btn w-100" data-operator="log">log</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-number="1">1</button>
+            <button value="1" type="button" class="btn w-100" data-number="1">1</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-number="2">2</button>
+            <button value="2" type="button" class="btn w-100" data-number="2">2</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-number="3">3</button>
+            <button value="3" type="button" class="btn w-100" data-number="3">3</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-operator="add">+</button>
+            <button value="+" type="button" class="btn w-100" data-operator="add">+</button>
         </div>
     </div>
     <div class="row my-1 gx-3">
@@ -176,15 +176,15 @@
             <button type="button" class="btn w-100" data-operator="sign-toggle">+/-</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-number="0">0</button>
+            <button value="0" type="button" class="btn w-100" data-number="0">0</button>
         </div>
         <div class="col d-flex justify-content-center p-0" style="background-color: white;">
             <button type="button" class="btn w-100" data-operator="dot">.</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-operator="equals">=</button>
+            <button type="submit" onsubmit="calc()" class="btn w-100" data-action="equals">=</button>
         </div>
     </div>
-    
+    <script src="calculator.js"></script>
 </body>
 </html>
