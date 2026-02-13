@@ -3,6 +3,9 @@
     /* padding: 6px 0px; */
     margin:0px 2px;
 }
+.btn{
+    --bs-btn-font-size: large;
+}
 .btn:hover{
     --bs-btn-hover-border-color:black;
 }
@@ -15,4 +18,13 @@
     --bs-btn-bg:white;
     --bs-btn-font-weight: bold;
     --bs-btn-font-size: large;
+}
+.form-control{
+    background-color: transparent;
+    border: none;
+    height: auto;
+    font-size: 50px;
+}
+.form-control:focus{
+    border: none;
 }
