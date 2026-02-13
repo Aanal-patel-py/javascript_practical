@@ -3,3 +3,8 @@
     /* padding: 6px 0px; */
     margin:0px 2px;
 }
+.btn-secondary{
+    --bs-btn-bg:rgb(247, 246, 246);
+    --bs-btn-color:black;
+    
+}
