@@ -52,6 +52,25 @@ export class caculator {
         this.updateDisplay();
     }
     evaluate(value){
+
+        let count = 0;
+
+        for (let char of this.expression) {
+        if (char === "(") count++;
+        if (char === ")") count--;
+
+        // closing bracket came before opening
+        if (count < 0) {
+            this.displayElement.value = "Error";
+            return;
+        }
+        }
+
+        // bracket issue causing error
+        if (count !== 0) {
+        this.displayElement.value = "Error";
+        return;
+        }
         // Funtion is built in  constructor, helps in creating funtion dynamically from the string.
         // the () is used to call funtion immediately after its creation.
         const result = Function(
