@@ -1,7 +1,7 @@
 // const calc=document.getElementById("display");
 // console.log(calc.value);
 // clickEventHandlers(calc)
-export function clickEventHandlers(calc){
+export function clickEventHandler(calc){
     const buttonElements = document.querySelectorAll("button");
     console.log(buttonElements);
 
@@ -37,14 +37,28 @@ buttonElements.forEach(btn => {
 
 export function keyboardEventHandler(calc) {
   document.addEventListener("keydown", (e) => {
+    if (e.repeat) return; //tap a key : yes , but hold a key : ignored
+
     const allowed = /^[0-9+\-*/().%]$/;
+    console.log("KEY:", e.key);
 
     if (allowed.test(e.key)) {
       calc.append(e.key);
     }
+    if (e.key === "Enter") {
+      e.preventDefault();
+      calc.evaluate();
+      return;
+    }
 
-    if (e.key === "Enter") calc.evaluate();
-    if (e.key === "Backspace") calc.delete();
-    if (e.key === "Escape") calc.clear();
+    if (e.key === "Backspace") {
+      e.preventDefault();
+      calc.delete();
+      return;
+    }
+
+    if (e.key === "Escape") {
+      calc.clear();
+    }
   });
 }
