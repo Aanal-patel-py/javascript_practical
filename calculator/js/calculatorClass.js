@@ -30,6 +30,20 @@ export class caculator {
         if (lastChar === "(" && operators.includes(value) && value !== "-") {
             return;
         }
+        // if leading 0 anywhere replace
+        if (value >= "0" && value <= "9") {
+            const parts = this.expression.split(/([+\-*/%()])/);
+            const lastPart = parts[parts.length - 1];
+
+            // if current number is exactly "0", replace it
+            if (lastPart === "0") {
+                parts[parts.length - 1] = value;
+                this.expression = parts.join("");
+                this.updateDisplay();
+                return;
+            }
+        }
+
 
         //MULTIPLE DECIMAL POINT VALIDATION
         if (value === ".") {
