@@ -10,12 +10,23 @@ buttonElements.forEach(btn => {
     btn.addEventListener("click", function() {
         const value=this.dataset.value;
         const action=this.dataset.action;
-        const operator = this.dataset.operator;
-        console.log(value, action, operator);
+        const functionName = this.dataset.func;
+        console.log(value, action, functionName);
 
-        if (value){
-            
+        if (value){  
             calc.append(value);
+        }
+        else if (action === "clear"){
+            calc.clear()
+        }
+        else if (action === "delete"){
+            calc.delete()
+        }
+        else if (action === "evaluate"){
+            calc.evaluate()
+        }
+        else if (functionName){
+            calc.applyFunction(functionName)
         }
 
        

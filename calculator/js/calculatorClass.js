@@ -10,6 +10,30 @@ export class caculator {
         this.expression += value;
         this.updateDisplay();
     }
+    clear(value){
+        this.expression = '';
+        this.updateDisplay();
+    }
+    delete(value){
+        this.expression = this.expression.slice(0, -1);
+        this.updateDisplay();
+    }
+    evaluate(value){
+        // Funtion is built in  constructor, helps in creating funtion dynamically from the string.
+        // the () is used to call funtion immediately after its creation.
+        const result = Function(
+            '"use strict"; return (' + this.expression + ')')();
+        this.expression = result.toString();    
+        this.updateDisplay();
+        }
+        
+    
+
+    applyFunction(functionName){
+        if (functionName === "ln"){
+            this.expression = Math.log(this.expression);
+        }
+    }
 
     updateDisplay(){
         this.displayElement.value = this.expression;

@@ -19,24 +19,24 @@
             <button value="DEG" type="button" class="btn w-100" data-action="degree">DEG</button>
         </div>
         <div class="col-2 p-0">
-            <button value="FE" type="button" class="btn w-100" data-action="fe">F-E</button>
+            <button value="FE" type="button" class="btn w-100" data-action="fixed-to-exponent">F-E</button>
         </div>
     </div>
     <div class="row align-items-center gx-3">
         <div class="col d-flex justify-content-center p-0" style="background-color: transparent;">
-            <button type="button" class="btn w-100" data-function="memory-clear">MC</button>
+            <button type="button" class="btn w-100" data-func="memory-clear">MC</button>
         </div>
         <div class="col d-flex justify-content-center p-0" style="background-color: transparent;">
-            <button type="button" class="btn w-100" data-function="memory-recall">MR</button>
+            <button type="button" class="btn w-100" data-func="memory-recall">MR</button>
         </div>
         <div class="col d-flex justify-content-center p-0" style="background-color: transparent;">
-            <button type="button" class="btn w-100" data-function="memory-add">M+</button>
+            <button type="button" class="btn w-100" data-func="memory-add">M+</button>
         </div>
         <div class="col d-flex justify-content-center p-0" style="background-color: transparent;">
-            <button type="button" class="btn w-100" data-function="memory-subtract">M-</button>
+            <button type="button" class="btn w-100" data-func="memory-subtract">M-</button>
         </div>
         <div class="col d-flex justify-content-center p-0" style="background-color: transparent;">
-            <button type="button" class="btn w-100" data-function="memory-store">MS</button>
+            <button type="button" class="btn w-100" data-func="memory-store">MS</button>
         </div>
 
     </div>
@@ -56,7 +56,7 @@
         <div class="col-5 p-0">
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Function
+                    function
                 </button>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Action</a></li>
@@ -68,41 +68,41 @@
     </div>
     <div class="row my-1 gx-3">
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-function="2nd">2<sup>nd</sup></button>
+            <button type="button" class="btn w-100" data-func="2nd">2<sup>nd</sup></button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-function="pi">&#928;</button>
+            <button type="button" class="btn w-100" data-func="pi">&#928;</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-function="exponent of 10">e</button>
+            <button type="button" class="btn w-100" data-func="exponent of 10">e</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
             <button value="clear" type="button" class="btn w-100" data-action="clear">C</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button value="backspace" type="button" class="btn w-100" data-action="back_space"><img style="width: 20px;" src="public/delete.png"></button>
+            <button value="backspace" type="button" class="btn w-100" data-action="delete"><img style="width: 20px;" src="public/delete.png"></button>
         </div>
     </div>
     <div class="row my-1 gx-3">
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-function="square">x<sup>2</sup></button>
+            <button type="button" class="btn w-100" data-funcName="square">x<sup>2</sup></button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-function="reciprocal">1/x</button>
+            <button type="button" class="btn w-100" data-func="reciprocal">1/x</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-function="bar">|x|</button>
+            <button type="button" class="btn w-100" data-func="bar">|x|</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-function="exponent">exp</button>
+            <button type="button" class="btn w-100" data-func="exponent">exp</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-function="mod">mod</button>
+            <button type="button" class="btn w-100" data-func="mod">mod</button>
         </div>
     </div>
     <div class="row my-1 gx-3">
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-function="square-root">&#178;&#8730;x</button>
+            <button type="button" class="btn w-100" data-func="square-root">&#178;&#8730;x</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
             <button type="button" class="btn w-100" data-value="&lpar;">&lpar;</button>
@@ -111,7 +111,7 @@
             <button type="button" class="btn w-100" data-value="&rpar;">&rpar;</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-function="n!">n!</button>
+            <button type="button" class="btn w-100" data-func="n!">n!</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
             <button value="/" type="button" class="btn w-100" data-value="/">&divide;</button>
@@ -119,7 +119,7 @@
     </div>
     <div class="row my-1 gx-3">
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-function="x-exponent-y">x<sup>y</sup></button>
+            <button type="button" class="btn w-100" data-func="x-exponent-y">x<sup>y</sup></button>
         </div>
         <div class="col d-flex justify-content-center p-0">
             <button value="7" type="button" class="btn w-100" data-value="7">7</button>
@@ -136,7 +136,7 @@
     </div>
     <div class="row my-1 gx-3">
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-function="10-exponent-x">10<sup>x</sup></button>
+            <button type="button" class="btn w-100" data-func="10-exponent-x">10<sup>x</sup></button>
         </div>
         <div class="col d-flex justify-content-center p-0">
             <button value="4" type="button" class="btn w-100" data-value="4">4</button>
@@ -153,7 +153,7 @@
     </div>
     <div class="row my-1 gx-3">
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-function="log">log</button>
+            <button type="button" class="btn w-100" data-func="log">log</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
             <button value="1" type="button" class="btn w-100" data-value="1">1</button>
@@ -170,7 +170,7 @@
     </div>
     <div class="row my-1 gx-3">
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-function="ln">ln</button>
+            <button type="button" class="btn w-100" data-func="ln">ln</button>
         </div>
         <div class="col d-flex justify-content-center p-0"  style="background-color: white;">
             <button type="button" class="btn w-100" data-action="toggle-sign">+/-</button>
@@ -185,7 +185,7 @@
             <button type="submit" onsubmit="calc()" class="btn w-100" data-action="evaluate">=</button>
         </div>
     </div>
-    <!-- type module is used to import and export functions and variables from other js files -->
+    <!-- type module is used to import and export funcs and variables from other js files -->
     <script type="module" src="./js/calculatorClass.js"></script> 
 </body>
 </html>
