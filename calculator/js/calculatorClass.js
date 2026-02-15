@@ -33,6 +33,40 @@ export class caculator {
         if (functionName === "ln"){
             this.expression = Math.log(this.expression);
         }
+        else if (functionName === "log"){
+            this.expression = Math.log10(this.expression);
+        }
+        else if (functionName === "10-exponent-x"){
+            this.expression = Math.pow(10, this.expression);
+        }
+        else if (functionName === "x-exponent-y"){          
+        }
+        else if (functionName === "square-root"){
+            this.expression = Math.sqrt(this.expression);
+        }
+        else if (functionName === "square"){
+            this.expression = Math.pow(this.expression, 2);
+        }
+        else if (functionName === "reciprocal"){
+            this.expression = 1 / this.expression;
+        }
+        else if (functionName === "pi"){
+            this.expression = Math.PI;
+        }
+        else if (functionName === "e"){
+            this.expression = Math.E;
+        }
+        else if (functionName === "abs"){
+            this.expression = Math.abs(this.expression);
+        }
+        else if (functionName === "factorial"){
+        }
+        else if (functionName === "exp"){
+            this.expression = Math.exp(this.expression);
+        }
+        else if (functionName === "mod"){}
+        this.updateDisplay();
+
     }
 
     updateDisplay(){
