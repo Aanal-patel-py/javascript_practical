@@ -35,4 +35,16 @@ buttonElements.forEach(btn => {
 }
 
 
+export function keyboardEventHandler(calc) {
+  document.addEventListener("keydown", (e) => {
+    const allowed = /^[0-9+\-*/().%]$/;
 
+    if (allowed.test(e.key)) {
+      calc.append(e.key);
+    }
+
+    if (e.key === "Enter") calc.evaluate();
+    if (e.key === "Backspace") calc.delete();
+    if (e.key === "Escape") calc.clear();
+  });
+}

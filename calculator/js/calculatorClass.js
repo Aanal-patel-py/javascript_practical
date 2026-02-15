@@ -1,4 +1,5 @@
-import { clickEventHandlers } from "./eventListeners.js";
+import { clickEventHandler,keyboardEventHandler } from "./eventListeners.js";
+
 
 export class caculator {
     constructor(displayElement) {
@@ -39,8 +40,6 @@ export class caculator {
         else if (functionName === "10-exponent-x"){
             this.expression = Math.pow(10, this.expression);
         }
-        else if (functionName === "x-exponent-y"){          
-        }
         else if (functionName === "square-root"){
             this.expression = Math.sqrt(this.expression);
         }
@@ -68,10 +67,7 @@ export class caculator {
         }
         else if (functionName === "exp"){
             this.expression = Math.exp(this.expression);
-        }
-        else if (functionName === "mod"){
-
-        }
+        }    
         else if (functionName === "sin"){
             this.expression = Math.sin(this.expression);
         }
@@ -94,4 +90,5 @@ const displayElement = document.getElementById("display");
 const calculatorInstance = new caculator(displayElement);
 //object giving to click event handlers to perform operations on the display element
 console.log(calculatorInstance)
-clickEventHandlers(calculatorInstance);
+clickEventHandler(calculatorInstance);
+keyboardEventHandler(calculatorInstance);
