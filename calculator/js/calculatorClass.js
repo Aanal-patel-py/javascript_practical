@@ -94,6 +94,28 @@ export class caculator {
         }
         
     
+    toggleSign() {
+    if (!this.expression) return;
+
+    // split keeping operators
+    const parts = this.expression.split(/([+\-*/%()])/);
+    let last = parts[parts.length - 1];
+
+    // nothing to toggle
+    if (!last || isNaN(last)) return;
+
+    // CASE 1: already negative → remove minus
+    if (last.startsWith("-")) {
+        parts[parts.length - 1] = last.slice(1);
+    } 
+    // CASE 2: positive → make negative
+    else {
+        parts[parts.length - 1] = "(-" + last + ")";
+    }
+
+    this.expression = parts.join("");
+    this.updateDisplay();
+}
 
     applyFunction(functionName){
         if (functionName === "ln"){

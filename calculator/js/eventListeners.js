@@ -28,8 +28,9 @@ buttonElements.forEach(btn => {
         else if (functionName){
             calc.applyFunction(functionName)
         }
-
-       
+        else if (action === "toggle-sign") {
+            calc.toggleSign();
+        }
     });
 });
 }
