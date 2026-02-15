@@ -7,10 +7,42 @@ export class caculator {
         this.expression= '';
     
     }
-    append(value){
+    append(value) {
+        const operators = ["+", "-", "*", "/", "%", "**"];
+        const lastChar = this.expression.slice(-1);
+
+        // START VALIDATION
+        if (!this.expression && ["+", "*", "/", "%", "**"].includes(value)) {
+            return;
+        }
+
+        // tWO OPERATOR VALIDATION
+        if (operators.includes(lastChar) && operators.includes(value)) {
+            // allow cases like: ( -5 ) or * -3
+            if (value === "-") {
+            this.expression += value;
+            this.updateDisplay();
+            }
+            return;
+        }
+
+        // IF ( AND ANY OPERATOR OTHER THAN - THEN PREVENT
+        if (lastChar === "(" && operators.includes(value) && value !== "-") {
+            return;
+        }
+
+        //MULTIPLE DECIMAL POINT VALIDATION
+        if (value === ".") {
+            //PARTIIONED THE EXPERESSEION BASED ON OPERATORS AND PREVENT SECOND DECIMAL POINT IF ONE ALREADY EXISTS, IT CHECKS THE LAST PART
+            const parts = this.expression.split(/[\+\-\*\/%]/);
+            const currentNumber = parts[parts.length - 1];
+            if (currentNumber.includes(".")) return;
+        }
+
         this.expression += value;
         this.updateDisplay();
-    }
+        }
+
     clear(value){
         this.expression = '';
         this.updateDisplay();
