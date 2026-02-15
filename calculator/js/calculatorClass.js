@@ -59,12 +59,28 @@ export class caculator {
         else if (functionName === "abs"){
             this.expression = Math.abs(this.expression);
         }
-        else if (functionName === "factorial"){
+        else if (functionName === "n!"){
+            let result = 1;
+            for (let i = 1; i <= this.expression; i++) {
+                result *= i;
+            }
+            this.expression = result;
         }
         else if (functionName === "exp"){
             this.expression = Math.exp(this.expression);
         }
-        else if (functionName === "mod"){}
+        else if (functionName === "mod"){
+
+        }
+        else if (functionName === "sin"){
+            this.expression = Math.sin(this.expression);
+        }
+        else if (functionName === "cos"){
+            this.expression = Math.cos(this.expression);
+        }
+        else if (functionName === "tan"){
+            this.expression = Math.tan(this.expression);
+        }
         this.updateDisplay();
 
     }
