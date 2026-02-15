@@ -16,27 +16,27 @@
     </div>
     <div class="row p-3 justify-content-start">
         <div class="col-2 p-0">
-            <button value="DEG" type="button" class="btn w-100" data-operator="degree">DEG</button>
+            <button value="DEG" type="button" class="btn w-100" data-action="degree">DEG</button>
         </div>
         <div class="col-2 p-0">
-            <button value="FE" type="button" class="btn w-100" data-operator="fe">F-E</button>
+            <button value="FE" type="button" class="btn w-100" data-action="fe">F-E</button>
         </div>
     </div>
     <div class="row align-items-center gx-3">
         <div class="col d-flex justify-content-center p-0" style="background-color: transparent;">
-            <button type="button" class="btn w-100" data-operator="mc">MC</button>
+            <button type="button" class="btn w-100" data-function="memory-clear">MC</button>
         </div>
         <div class="col d-flex justify-content-center p-0" style="background-color: transparent;">
-            <button type="button" class="btn w-100" data-operator="mr">MR</button>
+            <button type="button" class="btn w-100" data-function="memory-recall">MR</button>
         </div>
         <div class="col d-flex justify-content-center p-0" style="background-color: transparent;">
-            <button type="button" class="btn w-100" data-operator="m+">M+</button>
+            <button type="button" class="btn w-100" data-function="memory-add">M+</button>
         </div>
         <div class="col d-flex justify-content-center p-0" style="background-color: transparent;">
-            <button type="button" class="btn w-100" data-operator="m-">M-</button>
+            <button type="button" class="btn w-100" data-function="memory-subtract">M-</button>
         </div>
         <div class="col d-flex justify-content-center p-0" style="background-color: transparent;">
-            <button type="button" class="btn w-100" data-operator="ms">MS</button>
+            <button type="button" class="btn w-100" data-function="memory-store">MS</button>
         </div>
 
     </div>
@@ -68,16 +68,16 @@
     </div>
     <div class="row my-1 gx-3">
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-operator="2nd">2<sup>nd</sup></button>
+            <button type="button" class="btn w-100" data-function="2nd">2<sup>nd</sup></button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-operator="pi">&#928;</button>
+            <button type="button" class="btn w-100" data-function="pi">&#928;</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-operator="exponent of 10">e</button>
+            <button type="button" class="btn w-100" data-function="exponent of 10">e</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button value="clear" type="button" class="btn w-100" data-action="Clear">C</button>
+            <button value="clear" type="button" class="btn w-100" data-action="clear">C</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
             <button value="backspace" type="button" class="btn w-100" data-action="back_space"><img style="width: 20px;" src="public/delete.png"></button>
@@ -85,41 +85,41 @@
     </div>
     <div class="row my-1 gx-3">
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-operator="square">x<sup>2</sup></button>
+            <button type="button" class="btn w-100" data-function="square">x<sup>2</sup></button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-operator="reciprocal">1/x</button>
+            <button type="button" class="btn w-100" data-function="reciprocal">1/x</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-operator="bar">|x|</button>
+            <button type="button" class="btn w-100" data-function="bar">|x|</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-operator="exponent">exp</button>
+            <button type="button" class="btn w-100" data-function="exponent">exp</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-operator="mod">mod</button>
-        </div>
-    </div>
-    <div class="row my-1 gx-3">
-        <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-operator="square-root">&#178;&#8730;x</button>
-        </div>
-        <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-operator="opening-parenthesis">&lpar;</button>
-        </div>
-        <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-operator="closing-parenthesis">&rpar;</button>
-        </div>
-        <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-operator="factorial">n!</button>
-        </div>
-        <div class="col d-flex justify-content-center p-0">
-            <button value="/" type="button" class="btn w-100" data-operator="divide">&divide;</button>
+            <button type="button" class="btn w-100" data-function="mod">mod</button>
         </div>
     </div>
     <div class="row my-1 gx-3">
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-operator="x-exponent-y">x<sup>y</sup></button>
+            <button type="button" class="btn w-100" data-function="square-root">&#178;&#8730;x</button>
+        </div>
+        <div class="col d-flex justify-content-center p-0">
+            <button type="button" class="btn w-100" data-value="&lpar;">&lpar;</button>
+        </div>
+        <div class="col d-flex justify-content-center p-0">
+            <button type="button" class="btn w-100" data-value="&rpar;">&rpar;</button>
+        </div>
+        <div class="col d-flex justify-content-center p-0">
+            <button type="button" class="btn w-100" data-function="n!">n!</button>
+        </div>
+        <div class="col d-flex justify-content-center p-0">
+            <button value="/" type="button" class="btn w-100" data-value="/">&divide;</button>
+        </div>
+    </div>
+    <div class="row my-1 gx-3">
+        <div class="col d-flex justify-content-center p-0">
+            <button type="button" class="btn w-100" data-function="x-exponent-y">x<sup>y</sup></button>
         </div>
         <div class="col d-flex justify-content-center p-0">
             <button value="7" type="button" class="btn w-100" data-value="7">7</button>
@@ -131,12 +131,12 @@
             <button value="9" type="button" class="btn w-100" data-value="9">9</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button value="*" type="button" class="btn w-100" data-operator="multiply">x</button>
+            <button value="*" type="button" class="btn w-100" data-value="*">x</button>
         </div>
     </div>
     <div class="row my-1 gx-3">
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-operator="10-exponent-x">10<sup>x</sup></button>
+            <button type="button" class="btn w-100" data-function="10-exponent-x">10<sup>x</sup></button>
         </div>
         <div class="col d-flex justify-content-center p-0">
             <button value="4" type="button" class="btn w-100" data-value="4">4</button>
@@ -148,12 +148,12 @@
             <button value="6" type="button" class="btn w-100" data-value="6">6</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button value="-" type="button" class="btn w-100" data-operator="subtract">-</button>
+            <button value="-" type="button" class="btn w-100" data-value="-">-</button>
         </div>
     </div>
     <div class="row my-1 gx-3">
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-operator="log">log</button>
+            <button type="button" class="btn w-100" data-function="log">log</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
             <button value="1" type="button" class="btn w-100" data-value="1">1</button>
@@ -165,24 +165,24 @@
             <button value="3" type="button" class="btn w-100" data-value="3">3</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button value="+" type="button" class="btn w-100" data-operator="add">+</button>
+            <button value="+" type="button" class="btn w-100" data-value="+">+</button>
         </div>
     </div>
     <div class="row my-1 gx-3">
         <div class="col d-flex justify-content-center p-0">
-            <button type="button" class="btn w-100" data-operator="natural-log">ln</button>
+            <button type="button" class="btn w-100" data-function="ln">ln</button>
         </div>
         <div class="col d-flex justify-content-center p-0"  style="background-color: white;">
-            <button type="button" class="btn w-100" data-operator="sign-toggle">+/-</button>
+            <button type="button" class="btn w-100" data-action="toggle-sign">+/-</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
             <button value="0" type="button" class="btn w-100" data-value="0">0</button>
         </div>
         <div class="col d-flex justify-content-center p-0" style="background-color: white;">
-            <button type="button" class="btn w-100" data-operator="dot">.</button>
+            <button type="button" class="btn w-100" data-value=".">.</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button type="submit" onsubmit="calc()" class="btn w-100" data-action="equals">=</button>
+            <button type="submit" onsubmit="calc()" class="btn w-100" data-action="evaluate">=</button>
         </div>
     </div>
     <!-- type module is used to import and export functions and variables from other js files -->
