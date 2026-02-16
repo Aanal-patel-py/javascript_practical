@@ -111,3 +111,18 @@ document.getElementById("productTable").addEventListener("click", function (e) {
 });
 
 
+document.getElementById("applyFilter").addEventListener("click", function () {
+  const value = document.getElementById("filterId").value.trim();
+  const products = getProducts();
+  const tbody = document.getElementById("productTable");
+
+  tbody.innerHTML = "";
+
+  if (!value) {
+    products.forEach(p => appendProductToTable(p));
+    return;
+  }
+
+  const filtered = products.filter(p => String(p.id).includes(value));
+  filtered.forEach(p => appendProductToTable(p));
+});
