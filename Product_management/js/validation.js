@@ -1,60 +1,73 @@
 // validation.js
 
 export function validateProductForm() {
-  const idEl = document.getElementById("productId");
-  const nameEl = document.getElementById("productName");
-  const imageEl = document.getElementById("productImage");
-  const priceEl = document.getElementById("productPrice");
-  const descEl = document.getElementById("productDesc");
+  const id = document.getElementById("productId");
+  const name = document.getElementById("productName");
+  const image = document.getElementById("productImage");
+  const price = document.getElementById("productPrice");
+  const desc = document.getElementById("productDesc");
 
   let isValid = true;
-
 
   const setInvalid = (el) => {
     el.classList.add("is-invalid");
     el.classList.remove("is-valid");
     isValid = false;
   };
-
+  
   const setValid = (el) => {
     el.classList.remove("is-invalid");
     el.classList.add("is-valid");
   };
 
-
-  if (!idEl.value || Number(idEl.value) <= 0) {
-    setInvalid(idEl);
+  
+  if (!id.value || Number(id.value) <= 0) {
+    setInvalid(id);
   } else {
-    setValid(idEl);
+    setValid(id);
   }
 
   
-  if (!nameEl.value || nameEl.value.trim().length < 3) {
-    setInvalid(nameEl);
+  if (!name.value || name.value.trim().length < 3) {
+    setInvalid(name);
   } else {
-    setValid(nameEl);
+    setValid(name);
   }
 
  
   const urlPattern = /^(https?:\/\/.*\.(?:png|jpg|jpeg|gif|webp))/i;
-  if (!urlPattern.test(imageEl.value.trim())) {
-    setInvalid(imageEl);
+  if (!urlPattern.test(image.value.trim())) {
+    setInvalid(image);
   } else {
-    setValid(imageEl);
+    setValid(image);
   }
 
  
-  if (!priceEl.value || Number(priceEl.value) <= 0) {
-    setInvalid(priceEl);
+  if (!price.value || Number(price.value) <= 0) {
+    setInvalid(price);
   } else {
-    setValid(priceEl);
+    setValid(price);
   }
 
-  if (!descEl.value || descEl.value.trim().length < 10) {
-    setInvalid(descEl);
+  if (!desc.value || desc.value.trim().length < 10) {
+    setInvalid(desc);
   } else {
-    setValid(descEl);
+    setValid(desc);
   }
-
+  console.log(id.value);
+  console.log(name.value);
+  console.log(image.value);
+  console.log(desc.value);
+  console.log(price.value);
   return isValid;
+
 }
+document.addEventListener("DOMContentLoaded", () => {
+  const inputs = document.querySelectorAll("#productForm input, #productForm textarea");
+
+  inputs.forEach(input => {
+    input.addEventListener("input", () => {
+      validateProductForm(input);
+    });
+  });
+});

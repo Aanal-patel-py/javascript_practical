@@ -19,7 +19,6 @@ export class Calculator {
 
         // tWO OPERATOR VALIDATION
         if (operators.includes(lastChar) && operators.includes(value)) {
-            // allow cases like: ( -5 ) or * -3
             if (value === "-") {
             this.expression += value;
             this.updateDisplay();
@@ -173,6 +172,13 @@ export class Calculator {
         this.displayElement.value = this.expression;
     }
 }
+Calculator.prototype.getCurrentValue = function () {
+    try {
+        return Function('"use strict"; return (' + this.expression + ')')();
+    } catch {
+        return 0;
+    }
+};
 Calculator.prototype.memoryClear = function () {
     this.memory = 0;
 };
@@ -180,13 +186,6 @@ Calculator.prototype.memoryClear = function () {
 Calculator.prototype.memoryRecall = function () {
     this.expression += this.memory.toString();
     this.updateDisplay();
-};
-Calculator.prototype.getCurrentValue = function () {
-    try {
-        return Function('"use strict"; return (' + this.expression + ')')();
-    } catch {
-        return 0;
-    }
 };
 Calculator.prototype.memoryAdd = function () {
     const value = this.getCurrentValue();

@@ -108,27 +108,27 @@
 
           <div class="mb-3">
             <label class="form-label">Product ID</label>
-            <input type="number" class="form-control" required />
+            <input id="productId" ype="number" class="form-control" min="1" required />
           </div>
 
           <div class="mb-3">
             <label class="form-label">Product Name</label>
-            <input type="text" class="form-control" required />
+            <input id="productName" type="text" class="form-control" minlength="3" required />
           </div>
 
           <div class="mb-3">
             <label class="form-label">Image URL</label>
-            <input type="text" class="form-control" required />
+            <input id="productImage" type="text" class="form-control" required />
           </div>
 
           <div class="mb-3">
             <label class="form-label">Price</label>
-            <input type="number" class="form-control" required />
+            <input id="productPrice" type="number" class="form-control" required />
           </div>
 
           <div class="mb-3">
             <label class="form-label">Description</label>
-            <textarea class="form-control" rows="3" required></textarea>
+            <textarea id="productDesc" class="form-control" rows="3" minlength="10" required></textarea>
           </div>
 
           <button class="btn btn-success w-100">Save Product</button>
@@ -142,6 +142,7 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script type="module" src="./js/main.js"></script>
 
 </body>
 </html>

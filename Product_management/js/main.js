@@ -7,6 +7,6 @@ document.getElementById("productForm").addEventListener("submit", function (e) {
 
   if (!isValid) return;
 
-  // 🔜 Next step: save to localStorage
+  
   console.log("Form is valid — ready to save");
 });
