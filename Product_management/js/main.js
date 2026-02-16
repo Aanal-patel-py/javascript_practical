@@ -1,5 +1,51 @@
 import { validateProductForm, initLiveValidation } from "./validation.js";
-import { addProduct, getProducts,deleteProduct } from "./storage.js";
+import { addProduct, getProducts,deleteProduct, updateProduct,productIdExists } from "./storage.js";
+
+
+let editMode = false;
+//run this function when the page is fully loaded, to ensure all DOM elements are available
+document.addEventListener("DOMContentLoaded", () => {
+  loadProductOnPage(); 
+  initLiveValidation(); 
+
+  document.getElementById("productForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!validateProductForm()) return;
+
+    
+    const newProduct = {
+      id: Number(document.getElementById("productId").value),
+      name: document.getElementById("productName").value.trim(),
+      image: document.getElementById("productImage").value.trim(),
+      price: Number(document.getElementById("productPrice").value),
+      description: document.getElementById("productDesc").value.trim(),
+    };
+    if (!editMode && productIdExists(newProduct.id)) {
+      alert("Product ID already exists");
+      return;
+    }
+
+    if (editMode) {
+      updateProduct(newProduct);
+      loadProductOnPage();
+      editMode = false;
+
+      const modal = bootstrap.Modal.getInstance(document.getElementById("productModal"));
+      modal?.hide();
+
+      document.getElementById("productId").disabled = false;
+      this.reset();
+      return;
+    }
+
+    addProduct(newProduct);
+    appendProductToTable(newProduct);
+
+    console.log("Form is valid — ready to save");
+    this.reset();
+  });
+});
+
 
 function loadProductOnPage() {
   const products = getProducts();
@@ -10,30 +56,9 @@ function loadProductOnPage() {
   });
 }
 
-//run this function when the page is fully loaded, to ensure all DOM elements are available
-document.addEventListener("DOMContentLoaded", () => {
-  loadProductOnPage(); 
-  initLiveValidation(); 
-});
 
-document.getElementById("productForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-  if (!validateProductForm()) return;
 
-  const newProduct = {
-    id: Number(document.getElementById("productId").value),
-    name: document.getElementById("productName").value.trim(),
-    image: document.getElementById("productImage").value.trim(),
-    price: Number(document.getElementById("productPrice").value),
-    description: document.getElementById("productDesc").value.trim(),
-  };
 
-  addProduct(newProduct);
-  appendProductToTable(newProduct);
-
-  console.log("Form is valid — ready to save");
-  this.reset(); //clear form after submission
-});
 
 function appendProductToTable(product) {
   const tbody = document.getElementById("productTable");
@@ -62,3 +87,27 @@ document.getElementById("productTable").addEventListener("click", function (e) {
     row.remove();
   }
 });
+
+//event listener for update function
+document.getElementById("productTable").addEventListener("click", function (e) {
+  if (e.target.classList.contains("btn-warning")) {
+    const row = e.target.closest("tr");
+    const id = Number(row.cells[0].innerText);
+    const products = getProducts();
+    const product = products.find(p => p.id === id);
+    if (!product) return;
+
+    document.getElementById("productId").value = product.id;
+    document.getElementById("productId").disabled = true; // prevent changing ID during update
+    document.getElementById("productName").value = product.name;
+    document.getElementById("productImage").value = product.image;
+    document.getElementById("productPrice").value = product.price;
+    document.getElementById("productDesc").value = product.description;
+    editMode = true;
+
+    const modal = new bootstrap.Modal(document.getElementById("productModal"));
+    modal.show();
+  }
+});
+
+

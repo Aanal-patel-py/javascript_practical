@@ -20,8 +20,20 @@ export function addProduct(product) {
 }
 
 export function deleteProduct(id) {
-  const stored = localStorage.getItem(STORAGE_KEY);
-  const products = JSON.parse(stored) || [];
+  const products = getProducts();
   const updatedProducts = products.filter((product) => product.id !== id);
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedProducts));
+  saveProducts(updatedProducts);
+}
+
+export function updateProduct(updatedProduct) {
+  const products = getProducts();
+  const updated = products.map(p =>
+    p.id === updatedProduct.id ? updatedProduct : p
+  );
+  saveProducts(updated);
+}
+
+export function productIdExists(id) {
+  const products = getProducts();
+  return products.some(p => p.id === id);
 }
