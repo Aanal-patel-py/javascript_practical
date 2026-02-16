@@ -18,7 +18,6 @@ function clearValidation(el) {
 }
 
 
-
 export function allowOnlyNumbers(inputEl) {
   inputEl.addEventListener("input", () => {
     inputEl.value = inputEl.value.replace(/[^0-9]/g, "");
@@ -81,25 +80,14 @@ export function validateDescLive(inputEl) {
   });
 }
 
-
 export function validateProductForm() {
-  const id = document.getElementById("productId");
-  const name = document.getElementById("productName");
-  const image = document.getElementById("productImage");
-  const price = document.getElementById("productPrice");
-  const desc = document.getElementById("productDesc");
+  const idEl = document.getElementById("productId");
+  const nameEl = document.getElementById("productName");
+  const imageEl = document.getElementById("productImage");
+  const priceEl = document.getElementById("productPrice");
+  const descEl = document.getElementById("productDesc");
 
   let isValid = true;
-
-  const setInvalid = (el) => {
-    el.classList.add("is-invalid");
-    el.classList.remove("is-valid");
-    isValid = false;
-  };
-  
-  const setValid = (el) => {
-    el.classList.remove("is-invalid");
-    el.classList.add("is-valid");
 
   const check = (condition, el) => {
     if (!condition) {
@@ -110,46 +98,6 @@ export function validateProductForm() {
     }
   };
 
-  
-  if (!id.value || Number(id.value) <= 0) {
-    setInvalid(id);
-  } else {
-    setValid(id);
-  }
-
-  
-  if (!name.value || name.value.trim().length < 3) {
-    setInvalid(name);
-  } else {
-    setValid(name);
-  }
-
- 
-  const urlPattern = /^(https?:\/\/.*\.(?:png|jpg|jpeg|gif|webp))/i;
-  if (!urlPattern.test(image.value.trim())) {
-    setInvalid(image);
-  } else {
-    setValid(image);
-  }
-
- 
-  if (!price.value || Number(price.value) <= 0) {
-    setInvalid(price);
-  } else {
-    setValid(price);
-  }
-
-  if (!desc.value || desc.value.trim().length < 10) {
-    setInvalid(desc);
-  } else {
-    setValid(desc);
-  }
-  console.log(id.value);
-  console.log(name.value);
-  console.log(image.value);
-  console.log(desc.value);
-  console.log(price.value);
-
   check(Number(idEl.value) > 0, idEl);
   check(nameEl.value.trim().length >= 3, nameEl);
   check(imageUrlPattern.test(imageEl.value.trim()), imageEl);
@@ -158,6 +106,7 @@ export function validateProductForm() {
 
   return isValid;
 }
+
 
 export function initLiveValidation() {
   const idEl = document.getElementById("productId");
@@ -169,7 +118,6 @@ export function initLiveValidation() {
 
   allowOnlyNumbers(idEl);
   allowOnlyNumbers(priceEl);
-
 
   validateNameLive(nameEl);
   validateImageLive(imageEl);
