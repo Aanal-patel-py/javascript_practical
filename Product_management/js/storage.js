@@ -18,3 +18,10 @@ export function addProduct(product) {
   saveProducts(products);
   console.log("Product added:", product);
 }
+
+export function deleteProduct(id) {
+  const stored = localStorage.getItem(STORAGE_KEY);
+  const products = JSON.parse(stored) || [];
+  const updatedProducts = products.filter((product) => product.id !== id);
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedProducts));
+}

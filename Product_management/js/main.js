@@ -1,5 +1,5 @@
 import { validateProductForm, initLiveValidation } from "./validation.js";
-import { addProduct, getProducts } from "./storage.js";
+import { addProduct, getProducts,deleteProduct } from "./storage.js";
 
 function loadProductOnPage() {
   const products = getProducts();
@@ -52,3 +52,13 @@ function appendProductToTable(product) {
   `;
   tbody.appendChild(row);
 }
+
+//event listener for delete function
+document.getElementById("productTable").addEventListener("click", function (e) {
+  if (e.target.classList.contains("btn-danger")) {
+    const row = e.target.closest("tr");
+    const id = Number(row.cells[0].innerText);
+    deleteProduct(id);
+    row.remove();
+  }
+});
