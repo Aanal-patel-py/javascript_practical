@@ -1,10 +1,11 @@
 import { clickEventHandler,keyboardEventHandler } from "./eventListeners.js";
 
 
-export class caculator {
+export class Calculator {
     constructor(displayElement) {
         this.displayElement = displayElement;
         this.expression= '';
+        this.memory = 0;
     
     }
     append(value) {
@@ -172,9 +173,35 @@ export class caculator {
         this.displayElement.value = this.expression;
     }
 }
+Calculator.prototype.memoryClear = function () {
+    this.memory = 0;
+};
+
+Calculator.prototype.memoryRecall = function () {
+    this.expression += this.memory.toString();
+    this.updateDisplay();
+};
+Calculator.prototype.getCurrentValue = function () {
+    try {
+        return Function('"use strict"; return (' + this.expression + ')')();
+    } catch {
+        return 0;
+    }
+};
+Calculator.prototype.memoryAdd = function () {
+    const value = this.getCurrentValue();
+    this.memory += value;
+    console.log("Memory after addition:", this.memory);
+};
+Calculator.prototype.memorySubtract = function () {
+    const value = this.getCurrentValue();
+    this.memory -= value;
+    console.log("Memory after subtraction:", this.memory);
+};
+
 
 const displayElement = document.getElementById("display");
-const calculatorInstance = new caculator(displayElement);
+const calculatorInstance = new Calculator(displayElement);
 //object giving to click event handlers to perform operations on the display element
 console.log(calculatorInstance)
 clickEventHandler(calculatorInstance);

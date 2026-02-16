@@ -31,6 +31,26 @@ buttonElements.forEach(btn => {
         else if (action === "toggle-sign") {
             calc.toggleSign();
         }
+
+        else if (action === "memory-clear") {
+        calc.memoryClear();
+        return;
+      }
+
+      else if (action === "memory-recall") {
+        calc.memoryRecall();
+        return;
+      }
+
+      else if (action === "memory-add") {
+        calc.memoryAdd();
+        return;
+      }
+
+      else if (action === "memory-subtract") {
+        calc.memorySubtract();
+        return;
+      }
     });
 });
 }
