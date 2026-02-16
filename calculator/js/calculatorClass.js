@@ -102,14 +102,14 @@ export class Calculator {
     const parts = this.expression.split(/([+\-*/%()])/);
     let last = parts[parts.length - 1];
 
-    // nothing to toggle
+    // if nothing to togggle
     if (!last || isNaN(last)) return;
 
-    // CASE 1: already negative → remove minus
+    // if already negative , remove minus
     if (last.startsWith("-")) {
         parts[parts.length - 1] = last.slice(1);
     } 
-    // CASE 2: positive → make negative
+    // if positive → make negative
     else {
         parts[parts.length - 1] = "(-" + last + ")";
     }
@@ -198,6 +198,11 @@ Calculator.prototype.memorySubtract = function () {
     this.memory -= value;
     console.log("Memory after subtraction:", this.memory);
 };
+Calculator.prototype.memoryStore= function (){
+    const value = this.getCurrentValue();
+    this.memory = value;
+    console.log("Memory stored", this.memory);
+}
 
 
 const displayElement = document.getElementById("display");

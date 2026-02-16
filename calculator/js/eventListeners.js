@@ -51,6 +51,10 @@ buttonElements.forEach(btn => {
         calc.memorySubtract();
         return;
       }
+      else if (action==='memory-store'){
+        calc.memoryStore();
+        return;
+      }
     });
 });
 }
