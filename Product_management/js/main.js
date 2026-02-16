@@ -126,3 +126,23 @@ document.getElementById("applyFilter").addEventListener("click", function () {
   const filtered = products.filter(p => String(p.id).includes(value));
   filtered.forEach(p => appendProductToTable(p));
 });
+
+document.getElementById("sortBy").addEventListener("change", function () {
+  const sortValue = this.value;
+  const products = getProducts();
+  const tbody = document.getElementById("productTable");
+
+  let sorted = [...products];
+
+  if (sortValue === "id") {
+    sorted.sort((a, b) => a.id - b.id);
+  } else if (sortValue === "name") {
+    sorted.sort((a, b) => a.name.localeCompare(b.name));
+  } else if (sortValue === "price") {
+    sorted.sort((a, b) => a.price - b.price);
+  }
+
+  tbody.innerHTML = "";
+  sorted.forEach(p => appendProductToTable(p));
+});
+

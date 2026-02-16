@@ -124,3 +124,4 @@ export function initLiveValidation() {
   validatePriceLive(priceEl);
   validateDescLive(descEl);
 }
+
