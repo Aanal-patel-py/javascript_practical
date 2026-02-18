@@ -10,7 +10,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container-fluid py-1.5" style="max-width: 400px; max-height: 800px; background:rgb(247, 246, 246);">
+    <div class="container-fluid py-1.5" style="max-width: 400px; background:rgb(247, 246, 246);">
     <div class="row p-3" style="height:120px;">
         <!-- added readonly below becz 2 times the keyboard was triggering the input event -->
         <input type="text" class="form-control text-end" id="display" placeholder="0" value="0" readonly >
@@ -123,13 +123,13 @@
             <button type="button" class="btn w-100" data-value="**">x<sup>y</sup></button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button value="7" type="button" class="btn w-100" data-value="7">7</button>
+            <button value="7" type="button" class="btn w-100 background" data-value="7">7</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button value="8" type="button" class="btn w-100" data-value="8">8</button>
+            <button value="8" type="button" class="btn w-100 background" data-value="8">8</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button value="9" type="button" class="btn w-100" data-value="9">9</button>
+            <button value="9" type="button" class="btn w-100 background" data-value="9">9</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
             <button value="*" type="button" class="btn w-100" data-value="*">x</button>
@@ -140,13 +140,13 @@
             <button type="button" class="btn w-100" data-func="10-exponent-x">10<sup>x</sup></button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button value="4" type="button" class="btn w-100" data-value="4">4</button>
+            <button value="4" type="button" class="btn w-100 background" data-value="4">4</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button value="5" type="button" class="btn w-100" data-value="5">5</button>
+            <button value="5" type="button" class="btn w-100 background" data-value="5">5</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button value="6" type="button" class="btn w-100" data-value="6">6</button>
+            <button value="6" type="button" class="btn w-100 background" data-value="6">6</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
             <button value="-" type="button" class="btn w-100" data-value="-">-</button>
@@ -157,13 +157,13 @@
             <button type="button" class="btn w-100" data-func="log">log</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button value="1" type="button" class="btn w-100" data-value="1">1</button>
+            <button value="1" type="button" class="btn w-100 background" data-value="1">1</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button value="2" type="button" class="btn w-100" data-value="2">2</button>
+            <button value="2" type="button" class="btn w-100 background" data-value="2">2</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button value="3" type="button" class="btn w-100" data-value="3">3</button>
+            <button value="3" type="button" class="btn w-100 background" data-value="3">3</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
             <button value="+" type="button" class="btn w-100" data-value="+">+</button>
@@ -174,13 +174,13 @@
             <button type="button" class="btn w-100" data-func="ln">ln</button>
         </div>
         <div class="col d-flex justify-content-center p-0"  style="background-color: white;">
-            <button type="button" class="btn w-100" data-action="toggle-sign">+/-</button>
+            <button type="button" class="btn w-100 background" data-action="toggle-sign">+/-</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
-            <button value="0" type="button" class="btn w-100" data-value="0">0</button>
+            <button value="0" type="button" class="btn w-100 background" data-value="0">0</button>
         </div>
         <div class="col d-flex justify-content-center p-0" style="background-color: white;">
-            <button type="button" class="btn w-100" data-value=".">.</button>
+            <button type="button" class="btn w-100 background" data-value=".">.</button>
         </div>
         <div class="col d-flex justify-content-center p-0">
             <button type="submit" onsubmit="calc()" class="btn w-100" data-action="evaluate">=</button>

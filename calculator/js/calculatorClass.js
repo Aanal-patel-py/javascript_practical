@@ -68,6 +68,7 @@ export class Calculator {
     evaluate(value){
 
         let count = 0;
+        this.expression = this.expression.replace(/(\d)--(\d)/g, "$1-(-$2)");
 
         for (let char of this.expression) {
         if (char === "(") count++;
